@@ -1,0 +1,5 @@
+.cartBanner {
+    background: var(--accent-bg);
+    border: 1px solid var(--accent-border);
+    box-sizing: border-box;
+}
