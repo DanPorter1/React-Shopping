@@ -53,3 +53,7 @@
 .pControls {
     padding: 0.5em;
 }
+
+.pBtn:disabled {
+    cursor: not-allowed;
+}

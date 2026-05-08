@@ -1,0 +1,16 @@
+#navList {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+
+#navList a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#navList a:hover {
+    color: var(--text-h);
+}
