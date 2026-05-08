@@ -3,3 +3,49 @@
     border: 2px solid var(--accent-bg);
     margin: 0.2em 0 0 0.2em;
 }
+
+.productList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.productCard {
+    border: 1px solid var(--accent-bg);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4em;
+    position: relative;
+}
+
+.productCard #pName {
+    color: white;
+    font-weight: bolder;
+}
+
+.productCard #pDesc {
+    font-size: smaller;
+}
+
+.productCard #pStock {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid var(--accent-bg);
+    border-radius: 100px;
+    width: 2em;
+    font-size: 0.8em;
+}
+
+.productCard #price {}
+
+.productCard:hover {
+    background-color: var(--accent-bg);
+}
+
+#pNo {
+    background: #444;
+    color: #bbb;
+    border-color: #666;
+    opacity: 0.2;
+}

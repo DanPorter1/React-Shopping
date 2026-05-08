@@ -10,7 +10,7 @@ function App() {
       <h1>The Shopping Simulator</h1>
       <CartBanner />
       <div className="cartMain">
-      <ProductsPanel />
+      <ProductsPanel url={"https://product-list.danporter-36a.workers.dev/api/testdata"}/>
       <BasketPanel />
       </div>
     </>

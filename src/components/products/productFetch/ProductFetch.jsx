@@ -1,14 +1,14 @@
 import useFetch from "../../../hooks/useFetch.js";
 import ProductsList from "../../../components/products/productsList/ProductsList.jsx";
 
-function ProductFetch() {
-    const { data, isLoading, error } = useFetch("http://localhost:3000/data");
+function ProductFetch(props) {
+    const { data, isLoading, error } = useFetch(props.url);
 
     return (
         <>
             {error && <div>{error}</div>}
             {isLoading && <div>Loading...</div>}
-            {data && <ProductsList data={data} />}
+            {data && <ProductsList data={data} search={props.search} />}
         </>
     );
 }
