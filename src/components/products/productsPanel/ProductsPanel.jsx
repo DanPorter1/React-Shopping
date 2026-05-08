@@ -19,7 +19,7 @@ function ProductsPanel(props) {
                 />
             </div>
             <div className="productList">
-                <ProductFetch url={props.url} search={search} />
+                <ProductFetch url={props.url} search={search} addItem={props.addItem} />
             </div>
         </div>
     )

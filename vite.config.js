@@ -10,6 +10,6 @@ export default defineConfig({
     ? [reactSWC()] // Cloudflare-safe build
     : [
         react(), // your local setup
-        babel({ presets: [react.reactCompilerPreset()] })
+        babel({})
       ]
 })

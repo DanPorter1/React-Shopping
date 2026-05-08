@@ -16,7 +16,7 @@ function ProductsList(props) {
                 <div id="pDesc">{p.description}</div>
                 {/*<div>Available: {p.in_stock ? "Yes" : "No"}</div>*/}
                 <div id="pPrice">Price: £{p.price}</div>
-                <button id="pBtn">Add to cart</button>
+                <button id="pBtn" onClick={() => props.addItem(p)}>Add to cart</button>
                 <div id="pStock">{p.stock_quantity}</div>
             </div>
         )

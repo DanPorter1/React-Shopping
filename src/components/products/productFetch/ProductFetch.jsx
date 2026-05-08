@@ -8,7 +8,7 @@ function ProductFetch(props) {
         <>
             {error && <div>{error}</div>}
             {isLoading && <div>Loading...</div>}
-            {data && <ProductsList data={data} search={props.search} />}
+            {data && <ProductsList data={data} search={props.search} addItem={props.addItem} />}
         </>
     );
 }
