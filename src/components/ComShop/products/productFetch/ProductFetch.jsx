@@ -1,14 +1,27 @@
 import useFetch from "../../../../hooks/useFetch.js";
 import ProductsList from "../productsList/ProductsList.jsx";
+import {useEffect} from "react";
 
-function ProductFetch(props) {
-    const { data, isLoading, error } = useFetch(props.url);
+function ProductFetch({ url, search, addItem, basket, getCat }) {
+    const { data, isLoading, error } = useFetch(url);
+
+    useEffect(() => {
+        if (data) {
+            const pCat = [...new Set(data.flatMap(p => p.categories))];
+            getCat(pCat);
+        }
+    }, [data, getCat]);
 
     return (
         <>
             {error && <div>{error}</div>}
             {isLoading && <div>Loading...</div>}
-            {data && <ProductsList data={data} search={props.search} addItem={props.addItem} basket={props.basket} />}
+            {data && <ProductsList
+                data={data}
+                search={search}
+                addItem={addItem}
+                basket={basket}
+            />}
         </>
     );
 }
