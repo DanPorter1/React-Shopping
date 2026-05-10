@@ -7,7 +7,9 @@ function ProductsPanel(props) {
 
     const [search, setSearch] = useState("");
 
-    const [cats, setCategories] = useState([]);   // store category list
+    const [categories, setCategories] = useState([]);
+
+    const [selectedCategory, setSelectedCategory] = useState("all");
 
     const getCategories = useCallback((cats) => {
         setCategories(cats);
@@ -23,12 +25,19 @@ function ProductsPanel(props) {
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
-                <select>
-                    <option value="all">All</option>
-                    {cats.map((cat) => (
-                        <option key={cat} value={cat}>{cat}</option>
-                    ))}
-                </select>
+                <div>
+                    <label htmlFor="">Filter Items </label>
+                    <select
+                        value={selectedCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value)}>
+                        <option value="all">All</option>
+                        {categories.map((category) => (
+                            <option key={category} value={category}>
+                                {category.charAt(0).toUpperCase() + category.slice(1)}
+                            </option>
+                        ))}
+                    </select>
+                </div>
             </div>
             <div className="productList">
                 <ProductFetch url={props.url}
@@ -36,6 +45,7 @@ function ProductsPanel(props) {
                               addItem={props.addItem}
                               basket={props.basket}
                               getCat={getCategories}
+                              selectedCategory={selectedCategory}
                 />
             </div>
         </div>

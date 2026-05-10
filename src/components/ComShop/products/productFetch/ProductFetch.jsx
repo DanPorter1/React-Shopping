@@ -2,7 +2,7 @@ import useFetch from "../../../../hooks/useFetch.js";
 import ProductsList from "../productsList/ProductsList.jsx";
 import {useEffect} from "react";
 
-function ProductFetch({ url, search, addItem, basket, getCat }) {
+function ProductFetch({ url, search, addItem, basket, getCat, selectedCategory }) {
     const { data, isLoading, error } = useFetch(url);
 
     useEffect(() => {
@@ -21,6 +21,7 @@ function ProductFetch({ url, search, addItem, basket, getCat }) {
                 search={search}
                 addItem={addItem}
                 basket={basket}
+                selectedCategory={selectedCategory}
             />}
         </>
     );

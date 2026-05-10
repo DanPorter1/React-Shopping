@@ -1,9 +1,12 @@
 function ProductsList(props) {
-
+    console.log("selectedCategory prop:", props.selectedCategory);
+    
     // SearchBar
-    const filtered = props.data.filter(p =>
-        p.name.toLowerCase().includes(props.search.toLowerCase())
-    );
+    const filtered = props.data.filter(p => {
+        const searchMatches = p.name.toLowerCase().includes(props.search.toLowerCase());
+        const catMatches = props.selectedCategory === "all" || p.categories.includes(props.selectedCategory);
+        return searchMatches && catMatches;
+    });
 
     const products = filtered.map(p => {
 
