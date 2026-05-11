@@ -57,3 +57,7 @@
 .pBtn:disabled {
     cursor: not-allowed;
 }
+
+.pBtn:hover {
+    background-color: var(--text-h);
+}
