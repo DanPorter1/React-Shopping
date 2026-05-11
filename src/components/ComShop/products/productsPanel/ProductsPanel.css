@@ -52,6 +52,9 @@
 
 .pControls {
     padding: 0.5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .pBtn:disabled {
